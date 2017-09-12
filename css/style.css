@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 55vh;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  width: 100vw;
+  min-height: 55vh;
+  overflow: hidden;
+}
+
+.layer .content-wrap {
+  position: absolute;
+  width: 100vw;
+  min-height: 55vh;
+}
+
+.layer .content-body {
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  /* Move Body Center */
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.layer img {
+  position: absolute;
+  width: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.layer h1 {
+  font-size: 2em;
+}
+
+.bottom {
+  background: #222;
+  z-index: 1;
+}
+
+.bottom .content-body {
+  right: 5%;
+}
+
+.bottom h1 {
+  color: #FDAB00;
+}
+
+.top {
+  background: #eee;
+  color: #222;
+  z-index: 2;
+  width: 50vw;
+}
+
+.top .content-body {
+  left: 5%;
+  color: #222;
+}
+
+.skewed .top {
+  /* Skew top layer -30deg and then we counter the skew for content in style below */
+  transform: skew(-30deg);
+  /* Move the margin to hide left side skrew */
+  margin-left: -500px;
+  /* Make the top layer half the size of the screen including the left margin */
+  width: calc(50vw + 500px);
+}
+
+.skewed .top .content-wrap {
+  /* Counter the skew make in style above */
+  transform: skew(30deg);
+  /* Move the margin to hide left side skrew */
+  margin-left: 500px;
+}
+
+@media(max-width: 768px) {
+  body {
+    font-size: 75%;
+  }
+}
+
+.slider{
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 200%;
+  left: 50%;
+  top: 50%;
+  background-color: #FDAB00;
+  z-index: 3;
+  transform: rotate(30deg) translateY(-50%);
+  transform-origin: center top;
+}
